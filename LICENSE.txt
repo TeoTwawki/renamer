@@ -1,0 +1,17 @@
+
+    TEO DOES NOT CARE PUBLIC LICENSE
+        Version 1, July 18 2016
+    Copyright (C) 2016 TeoTwawki <https://github.com/TeoTwawki>
+
+        Everyone is permitted to copy and distribute verbatim or modified copies
+        of this license document, and changing it is allowed as long as the name is
+        changed and you do not pretend it nor the associated code to be your original work.
+
+    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+    1. You may not represent the license or code this license applies to as your original work.
+       This condition DOES NOT apply to any changes you make.
+
+    2. Nothing! Do whatever you want!
+       TEO DOES NOT CARE!
+
