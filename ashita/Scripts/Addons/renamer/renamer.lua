@@ -3,13 +3,13 @@
         Version 1, July 18 2016
     Copyright (C) 2016 TeoTwawki <https://github.com/TeoTwawki>
 
-        Everyone is permitted to copy and distribute verbatim or modified copies
-        of this license document, and changing it is allowed as long as the name is
-        changed and you do not pretend it nor the associated code to be your original work.
+       Everyone is permitted to copy and distribute verbatim or modified copies of this
+       license document, and changing it is allowed as long as the name is changed and
+       you neither claim nor imply it or the associated code to be your original work.
 
     TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
-    1. You may not represent the code this license applies to as your original work.
+    1. You may not represent the license or code this license applies to as your original work.
        This condition DOES NOT apply to any changes you make.
 
     2. Nothing! Do whatever you want!
@@ -18,10 +18,10 @@
 
 _addon.author   = "TeoTwawki & atom0s";
 _addon.name     = "renamer";
-_addon.version  = "1.0";
+_addon.version  = "1.1";
 
-require "common"
-require "mathex"
+require("common")
+require("mathex")
 
 local renamer =
 {
@@ -36,7 +36,7 @@ ashita.register_event("command", function(cmd, nType)
     end
 
     -- Display current list, if we have one loaded.
-    if (args[2] == "status") then
+    if (#args == 2 and args[2] == "status") then
         if (renamer.listFile ~= nil) then
             print(string.format("Renamer: names from '%s' currently loaded.", renamer.listFile));
         else
@@ -45,56 +45,52 @@ ashita.register_event("command", function(cmd, nType)
         return true;
     end
 
-    -- Load the list.
-    if (args[2] == "load") then
-        if (args[3] ~= nil) then
-            package.loaded["lists/" .. args[3]] = nil;
-            require("lists/" .. args[3]);
-            renamer.enabled = true;
-            print(string.format("Renamer: names from file '%s' loaded.", args[3]));
-
-            if (renamer.listFile == nil) then
-                renamer.listFile = args[3];
-                print("Renamer: renaming activated.");
-            end
-
-            return true;
-        else
-            return false;
-        end
-    end
-
     -- Stop the addon.
-    if (args[2] == "stop" or args[2] == "unload") then
-        renamer.enabled = false;
+    if (#args == 2 and (args[2] == "stop" or args[2] == "unload")) then
+        renamer.active = false;
         renamer.listFile = nil;
         print("Renamer: renaming stopped.");
         return true;
     end
 
-    --[[ Todo:
-    "add"               add entry to file
-    "del" / "delete"    remove entry from file
-    change format and ditch the require/package?
-      zone,id,name
-      zone,id,name
-      zone,id,name
-    instead of a nested set of lua tables..
+    if (#args == 2 and args[2] == "load") then
+        print(string.format("Renamer: You must specify a file to load names from."));
+        return false;
+    end
 
-    Conditional naming?
-      "Proto-Ultima (Energy Screen)"
+    -- Load the list.
+    if (#args == 3 and args[3] ~= nil and args[2] == "load") then
+        -- if (io.open("lists/" .. args[3],"r") ~= nil) then
+            package.loaded["lists/" .. args[3]] = nil;
+            require("lists/" .. args[3]);
+            renamer.active = true;
+            print(string.format("Renamer: names from file '%s' loaded.", args[3]));
+            if (renamer.listFile == nil) then
+                print("Renamer: renaming activated.");
+            end
+            renamer.listFile = args[3];
+            return true;
+        --[[
+        else
+            print(string.format("Renamer: file '%s' not found.", args[3]));
+            return false;
+        end
+        ]]
+    end
 
-    Pet renaming?
-      "Atomic Squirrel"
-    Instead of "Carbuncle".
-    ]]
-
+    print("Usage:");
+    print(" /renamer status");
+    print("  Displays current loaded list, if any.");
+    print(" /renamer load filename");
+    print("  Load specified list file.");
+    print(" /renamer unload (or) /renamer stop");
+    print("  Stop renaming and unload the list.");
     return false;
 end);
 
 ashita.register_event("render", function()
-    -- Don"t run this if a name list isn"t loaded!
-    if (renamer.enabled == true) then
+    -- Don't run this if a name list isn't loaded!
+    if (renamer.active == true) then
         local zone_id = AshitaCore:GetDataManager():GetParty():GetPartyMemberZone(0);
         local targetObject = ObjectList[zone_id];
         if (targetObject ~= nil) then

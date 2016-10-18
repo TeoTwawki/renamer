@@ -3,9 +3,9 @@
         Version 1, July 18 2016
     Copyright (C) 2016 TeoTwawki <https://github.com/TeoTwawki>
 
-        Everyone is permitted to copy and distribute verbatim or modified copies
-        of this license document, and changing it is allowed as long as the name is
-        changed and you do not pretend it nor the associated code to be your original work.
+       Everyone is permitted to copy and distribute verbatim or modified copies of this
+       license document, and changing it is allowed as long as the name is changed and
+       you neither claim nor imply it or the associated code to be your original work.
 
     TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 

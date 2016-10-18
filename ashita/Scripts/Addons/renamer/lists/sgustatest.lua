@@ -3,7 +3,7 @@
     Notes:
 
       This file was to stress test the add on.
-      I noted barly a 2% increase in CPU usage on my potato.
+      I noted barely a 2% increase in CPU usage on my potato.
 
     --------------------------------------------------------------------------
 ]]
