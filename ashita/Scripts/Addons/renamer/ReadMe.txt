@@ -1,12 +1,6 @@
-
-  THINGS YOU CAN DO WITH THIS ADDON:
-    Rename known or suspected NM placeholders.
-    Create non standard NPCs on a private server and give your players a list file to name them.
-    Rename Ken in Bastok Markets to something mean for having such a vile escort quest. Screw you Ken.  :)
-
   HOW TO USE THIS ADDON:
 
-    First place the archive contents in your \Scripts\Addons\ directory.
+    First place the ashita version of renamer in your \Scripts\Addons\ directory.
     Now place a list file in \Scripts\Addons\renamer\lists\ or Edit an exiting list.
 
       /addon load renamer
