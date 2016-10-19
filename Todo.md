@@ -12,9 +12,9 @@ zone,id,name
 ```
 instead of a nested set of lua tables..
 
- ## Conditional naming?
+## Conditional naming?
 "Proto-Ultima (Energy Screen)"
 
- ## Pet renaming?
+## Pet renaming?
 "Atomic Squirrel"
 Instead of "Carbuncle".

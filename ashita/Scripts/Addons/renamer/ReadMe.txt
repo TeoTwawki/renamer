@@ -20,13 +20,3 @@
       /renamer stop
       /renamer unload
     Either of these will tell the addon to cease renaming objects.
-
-
-  MORE TO BE ADDED AT A LATER DATE!
-    Some future possibilities under consideration:
-      Ability to add/remove lines from list file via addon commands.
-      Some GUI elements as a command line alternative or as enhancements.
-      Pet renaming. "Atomic Squirrel" Instead of "Carbuncle".
-      Conditional naming. "Proto-Ultima (Energy Screen)"
-      A cleaner/neater/simpler list file format.
-
