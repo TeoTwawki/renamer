@@ -1,7 +1,7 @@
   HOW TO USE THIS ADDON:
 
-    First place the ashita version of renamer in your \Scripts\Addons\ directory.
-    Now place a list file in \Scripts\Addons\renamer\lists\ or Edit an exiting list.
+    First place the ashita version of renamer in your \Addons\ directory.
+    Now place a list file in \Addons\renamer\lists\ or Edit an exiting list.
 
       /addon load renamer
     This will load the addon, but in an inactive state.
