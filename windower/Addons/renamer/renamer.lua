@@ -87,7 +87,7 @@ windower.register_event("addon command", function(...)
     return;
 end);
 
-windower.register_event("prerender", function() -- postrender
+windower.register_event("prerender", function()
     -- Don't run this if a name list isn't loaded!
     if (renamer.active == true) then
         local ffxiinfo = windower.ffxi.get_info();

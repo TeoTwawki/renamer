@@ -88,7 +88,7 @@ ashita.register_event("command", function(cmd, nType)
     return false;
 end);
 
-ashita.register_event("render", function()
+ashita.register_event("prerender", function()
     -- Don't run this if a name list isn't loaded!
     if (renamer.active == true) then
         local zone_id = AshitaCore:GetDataManager():GetParty():GetMemberZone(0);
