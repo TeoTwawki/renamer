@@ -11,6 +11,6 @@ Screw you, Ken.  😃
 
 ## How To Use This Addon:
 
-- **Ashita** users, **[click here](./ashita/Scripts/Addons/renamer/ReadMe.txt)** for instructions
+- **Ashita** users, **[click here](./ashita/ReadMe.txt)** for instructions
 
 - **Windower** users, **[click here](./windower/Addons/renamer/ReadMe.txt)** for instructions
